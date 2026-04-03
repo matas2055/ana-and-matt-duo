@@ -75,7 +75,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen min-h-[600px] md:h-[120vh] flex items-center justify-center overflow-hidden"
+      className="relative h-screen min-h-[600px] md:h-[120vh] flex items-center justify-center overflow-hidden max-w-[100vw]"
     >
       {/* Background image with parallax */}
       <motion.div className="absolute inset-0" style={{ y, scale }}>
@@ -96,7 +96,7 @@ export default function Hero() {
       {/* Content */}
       <motion.div
         style={{ y: textY, opacity }}
-        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center"
+        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center w-full overflow-hidden"
       >
         {/* ===== LOGO — transparent PNG ===== */}
         <motion.div
@@ -107,14 +107,14 @@ export default function Hero() {
             delay: 0.2,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="relative mx-auto mb-4 sm:mb-6 w-[90vw] max-w-[700px] sm:w-[80vw] md:w-[65vw]"
+          className="relative mx-auto mb-4 sm:mb-6 w-[85vw] max-w-[700px] sm:w-[80vw] md:w-[65vw]"
         >
           {/* Glow behind logo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2, delay: 1.2 }}
-            className="absolute inset-0 -m-12"
+            className="absolute inset-0 -m-4 sm:-m-12"
             style={{
               background: "radial-gradient(ellipse at center, rgba(201, 169, 110, 0.15) 0%, transparent 70%)",
               filter: "blur(50px)",
@@ -136,7 +136,7 @@ export default function Hero() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="w-32 h-px mx-auto my-8"
+          className="w-24 sm:w-32 h-px mx-auto my-4 sm:my-8"
           style={{ background: "linear-gradient(90deg, transparent, #C9A96E, transparent)" }}
         />
 
@@ -234,7 +234,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3 }}
-          className="mt-12 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+          className="mt-10 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6"
         >
           {[
             { target: 218, suffix: "+", label: "Songs" },
@@ -244,7 +244,7 @@ export default function Hero() {
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div
-                className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold"
+                className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold"
                 style={{ color: "#C9A96E" }}
               >
                 <AnimatedCounter target={stat.target} suffix={stat.suffix} />

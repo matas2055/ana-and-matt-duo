@@ -72,7 +72,7 @@ export default function About() {
             transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="relative"
           >
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
+            <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-2xl overflow-hidden">
               <motion.div style={{ y: imageY }} className="absolute inset-[-10%]">
                 <Image
                   src="/images/about-portrait.jpg"
@@ -198,7 +198,7 @@ export default function About() {
           transition={{ duration: 1, delay: 0.5 }}
           className="mt-16 sm:mt-24 md:mt-32 relative"
         >
-          <div className="relative h-[35vh] sm:h-[50vh] md:h-[60vh] rounded-xl sm:rounded-2xl overflow-hidden">
+          <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] rounded-xl sm:rounded-2xl overflow-hidden">
             <Image
               src="/images/about-playing.jpg"
               alt="Matt playing guitar with Ana"
