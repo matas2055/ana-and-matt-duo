@@ -29,7 +29,7 @@ export default function Footer() {
             </span>
           </motion.div>
 
-          <div className="flex gap-8 text-cream/30 text-sm">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-cream/30 text-sm">
             {["About", "Repertoire", "Experience", "Gallery", "Contact"].map((link) => (
               <a
                 key={link}

@@ -8,13 +8,13 @@ export default function Videos() {
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="videos" className="py-32 bg-cream relative overflow-hidden">
+    <section id="videos" className="py-16 sm:py-24 md:py-32 bg-cream relative overflow-hidden">
       {/* Decorative element */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-marsala/3 rounded-full blur-[120px]" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-20">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -27,7 +27,7 @@ export default function Videos() {
               initial={{ y: "100%" }}
               animate={isInView ? { y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-serif text-5xl md:text-7xl text-marsala"
+              className="font-serif text-4xl sm:text-5xl md:text-7xl text-marsala"
             >
               Watch Us Play
             </motion.h2>
@@ -41,7 +41,7 @@ export default function Videos() {
         </div>
 
         {/* YouTube Videos */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {[
             { id: "M_T6XRcN5nM", si: "m4XnpKeo958zG1lM", title: "Live Performance" },
             { id: "3ySx_pAvIb8", si: "Jhkc6eh0VCS6e5qx", title: "Acoustic Session" },

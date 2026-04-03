@@ -19,19 +19,19 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-32 bg-white overflow-hidden"
+      className="relative py-16 sm:py-24 md:py-32 bg-white overflow-hidden"
     >
       {/* Decorative circles */}
       <div className="absolute top-20 -right-32 w-96 h-96 rounded-full bg-gold/5 blur-3xl" />
       <div className="absolute bottom-20 -left-32 w-96 h-96 rounded-full bg-marsala/5 blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export default function About() {
               initial={{ y: "100%" }}
               animate={isInView ? { y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-serif text-5xl md:text-7xl text-marsala"
+              className="font-serif text-4xl sm:text-5xl md:text-7xl text-marsala"
             >
               About Us
             </motion.h2>
@@ -59,7 +59,7 @@ export default function About() {
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-20 items-center">
           {/* Image with parallax and reveal */}
           <motion.div
             ref={imageRef}
@@ -89,7 +89,7 @@ export default function About() {
               initial={{ opacity: 0, x: 30, y: 30 }}
               animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1 }}
-              className="absolute -bottom-8 -right-8 bg-marsala text-cream p-6 rounded-xl shadow-2xl glow-gold max-w-[200px]"
+              className="absolute -bottom-4 -right-4 sm:-bottom-8 sm:-right-8 bg-marsala text-cream p-4 sm:p-6 rounded-xl shadow-2xl glow-gold max-w-[160px] sm:max-w-[200px]"
             >
               <p className="font-serif text-3xl font-bold text-gold">7+</p>
               <p className="text-cream/70 text-sm mt-1">
@@ -102,7 +102,7 @@ export default function About() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 1, delay: 0.8 }}
-              className="absolute -top-4 -left-4 w-32 h-32 border-t-2 border-l-2 border-gold/40 rounded-tl-2xl"
+              className="hidden sm:block absolute -top-4 -left-4 w-32 h-32 border-t-2 border-l-2 border-gold/40 rounded-tl-2xl"
             />
           </motion.div>
 
@@ -112,7 +112,7 @@ export default function About() {
               {
                 text: (
                   <>
-                    <span className="font-serif text-3xl text-marsala font-bold leading-tight block mb-4">
+                    <span className="font-serif text-2xl sm:text-3xl text-marsala font-bold leading-tight block mb-4">
                       A dynamic husband-and-wife duo with a passion for music.
                     </span>
                     Based in Santa Catarina, Brazil, Matt & Ana bring the perfect
@@ -196,9 +196,9 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.5 }}
-          className="mt-32 relative"
+          className="mt-16 sm:mt-24 md:mt-32 relative"
         >
-          <div className="relative h-[50vh] md:h-[60vh] rounded-2xl overflow-hidden">
+          <div className="relative h-[35vh] sm:h-[50vh] md:h-[60vh] rounded-xl sm:rounded-2xl overflow-hidden">
             <Image
               src="/images/about-playing.jpg"
               alt="Matt playing guitar with Ana"
@@ -207,11 +207,11 @@ export default function About() {
               sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-marsala/80 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-              <p className="text-cream/60 text-sm uppercase tracking-[0.2em] mb-2">
+            <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 md:p-12">
+              <p className="text-cream/60 text-xs sm:text-sm uppercase tracking-[0.2em] mb-1 sm:mb-2">
                 The Sound
               </p>
-              <p className="text-cream font-serif text-2xl md:text-4xl max-w-2xl leading-tight">
+              <p className="text-cream font-serif text-lg sm:text-2xl md:text-4xl max-w-2xl leading-tight">
                 &ldquo;The perfect combination of rhythm and melody&rdquo;
               </p>
             </div>
@@ -219,7 +219,7 @@ export default function About() {
         </motion.div>
 
         {/* Testimonials */}
-        <div className="mt-24 grid md:grid-cols-2 gap-6">
+        <div className="mt-12 sm:mt-24 grid md:grid-cols-2 gap-4 sm:gap-6">
           {[
             {
               quote: "Mateus is a great performer and always engages with the audience.",
@@ -247,7 +247,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.8 + i * 0.15 }}
-              className="group relative bg-cream p-8 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-500"
+              className="group relative bg-cream p-5 sm:p-8 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-500"
             >
               {/* Animated gradient border on hover */}
               <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-gold/30 transition-colors duration-500" />

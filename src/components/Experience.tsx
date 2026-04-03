@@ -18,13 +18,13 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="experience" className="py-32 bg-cream relative overflow-hidden">
+    <section id="experience" className="py-16 sm:py-24 md:py-32 bg-cream relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-marsala/3 rounded-full blur-[150px]" />
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10" ref={ref}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-20">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -37,7 +37,7 @@ export default function Experience() {
               initial={{ y: "100%" }}
               animate={isInView ? { y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-serif text-5xl md:text-7xl text-marsala"
+              className="font-serif text-4xl sm:text-5xl md:text-7xl text-marsala"
             >
               Our Journey
             </motion.h2>
@@ -83,9 +83,9 @@ export default function Experience() {
               />
 
               {/* Card */}
-              <div className={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
+              <div className={`ml-14 sm:ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
                 <div
-                  className={`p-6 rounded-xl transition-all duration-500 hover:shadow-lg ${
+                  className={`p-4 sm:p-6 rounded-xl transition-all duration-500 hover:shadow-lg ${
                     item.highlight
                       ? "bg-marsala text-cream hover:shadow-marsala/20"
                       : "bg-white border border-marsala/5 hover:border-gold/20 hover:shadow-gold/5"
@@ -103,7 +103,7 @@ export default function Experience() {
                       </span>
                     )}
                   </div>
-                  <h3 className={`font-serif text-xl font-bold mb-2 ${item.highlight ? "text-cream" : "text-marsala"}`}>
+                  <h3 className={`font-serif text-lg sm:text-xl font-bold mb-2 ${item.highlight ? "text-cream" : "text-marsala"}`}>
                     {item.title}
                   </h3>
                   <p className={`text-sm leading-relaxed ${item.highlight ? "text-cream/70" : "text-charcoal/50"}`}>
@@ -120,7 +120,7 @@ export default function Experience() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-24 grid md:grid-cols-3 gap-6"
+          className="mt-12 sm:mt-24 grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
         >
           {/* Languages */}
           <div className="bg-white rounded-xl p-8 border border-marsala/5 hover:border-gold/20 transition-colors duration-300">

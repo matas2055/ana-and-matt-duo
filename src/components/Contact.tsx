@@ -43,7 +43,7 @@ export default function Contact() {
   const [focused, setFocused] = useState<string | null>(null);
 
   return (
-    <section id="contact" className="relative py-32 overflow-hidden">
+    <section id="contact" className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
       {/* Background split */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-marsala" />
@@ -61,9 +61,9 @@ export default function Contact() {
 
       <div className="noise-bg absolute inset-0" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-20">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -76,7 +76,7 @@ export default function Contact() {
               initial={{ y: "100%" }}
               animate={isInView ? { y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-serif text-5xl md:text-7xl text-cream"
+              className="font-serif text-4xl sm:text-5xl md:text-7xl text-cream"
             >
               Book Us
             </motion.h2>
@@ -98,7 +98,7 @@ export default function Contact() {
           />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16">
           {/* Left - info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}

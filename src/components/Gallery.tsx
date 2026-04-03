@@ -5,11 +5,11 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Image from "next/image";
 
 const photos = [
-  { src: "/images/hero-walking.jpg", caption: "On the road", aspect: "col-span-2 row-span-2" },
-  { src: "/images/about-portrait.jpg", caption: "The duo", aspect: "col-span-1 row-span-2" },
-  { src: "/images/gallery-live.jpg", caption: "Live performance", aspect: "col-span-1 row-span-1" },
-  { src: "/images/about-playing.jpg", caption: "Acoustic session", aspect: "col-span-1 row-span-1" },
-  { src: "/images/gallery-stage.jpg", caption: "On stage", aspect: "col-span-1 row-span-2" },
+  { src: "/images/hero-walking.jpg", caption: "On the road", aspect: "col-span-1 sm:col-span-2 sm:row-span-2" },
+  { src: "/images/about-portrait.jpg", caption: "The duo", aspect: "col-span-1 sm:row-span-2" },
+  { src: "/images/gallery-live.jpg", caption: "Live performance", aspect: "col-span-1" },
+  { src: "/images/about-playing.jpg", caption: "Acoustic session", aspect: "col-span-1" },
+  { src: "/images/gallery-stage.jpg", caption: "On stage", aspect: "col-span-1 sm:row-span-2" },
 ];
 
 function ParallaxImage({ src, caption, className }: { src: string; caption: string; className?: string }) {
@@ -57,10 +57,10 @@ export default function Gallery() {
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section id="gallery" className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6" ref={ref}>
+    <section id="gallery" className="py-16 sm:py-24 md:py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" ref={ref}>
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-20">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -73,7 +73,7 @@ export default function Gallery() {
               initial={{ y: "100%" }}
               animate={isInView ? { y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-serif text-5xl md:text-7xl text-marsala"
+              className="font-serif text-4xl sm:text-5xl md:text-7xl text-marsala"
             >
               Gallery
             </motion.h2>
@@ -87,7 +87,7 @@ export default function Gallery() {
         </div>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[250px] md:auto-rows-[300px] gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[220px] sm:auto-rows-[250px] md:auto-rows-[300px] gap-3 sm:gap-4">
           {photos.map((photo) => (
             <ParallaxImage
               key={photo.src}

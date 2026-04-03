@@ -180,11 +180,11 @@ export default function Repertoire() {
   const display = showAll ? songs : songs.slice(0, 12);
 
   return (
-    <section id="repertoire" className="relative py-32 bg-marsala overflow-hidden noise-bg">
+    <section id="repertoire" className="relative py-16 sm:py-24 md:py-32 bg-marsala overflow-hidden noise-bg">
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[150px]" />
 
-      <div className="max-w-6xl mx-auto px-6 relative z-10" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10" ref={ref}>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -204,7 +204,7 @@ export default function Repertoire() {
               initial={{ y: "100%" }}
               animate={isInView ? { y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-serif text-5xl md:text-7xl text-cream"
+              className="font-serif text-4xl sm:text-5xl md:text-7xl text-cream"
             >
               Repertoire
             </motion.h2>
@@ -213,7 +213,7 @@ export default function Repertoire() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6 }}
-            className="text-cream/40 mt-4 text-lg"
+            className="text-cream/40 mt-4 text-base sm:text-lg"
           >
             {total}+ songs across {repertoire.length} genres — and always growing
           </motion.p>
@@ -230,13 +230,13 @@ export default function Repertoire() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-3 mb-14"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-14"
         >
           {repertoire.map((cat, i) => (
             <button
               key={cat.name}
               onClick={() => { setActive(i); setShowAll(false); }}
-              className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-500 overflow-hidden ${
+              className={`relative px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-500 overflow-hidden ${
                 active === i
                   ? "text-marsala-dark shadow-lg"
                   : "text-cream/50 hover:text-cream/80 border border-cream/10 hover:border-cream/20"
@@ -265,7 +265,7 @@ export default function Repertoire() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"
           >
             {display.map((song, i) => (
               <motion.div

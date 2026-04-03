@@ -75,7 +75,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[120vh] flex items-center justify-center overflow-hidden"
+      className="relative h-screen min-h-[600px] md:h-[120vh] flex items-center justify-center overflow-hidden"
     >
       {/* Background image with parallax */}
       <motion.div className="absolute inset-0" style={{ y, scale }}>
@@ -96,7 +96,7 @@ export default function Hero() {
       {/* Content */}
       <motion.div
         style={{ y: textY, opacity }}
-        className="relative z-10 max-w-6xl mx-auto px-6 text-center"
+        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center"
       >
         {/* ===== LOGO — transparent PNG ===== */}
         <motion.div
@@ -107,7 +107,7 @@ export default function Hero() {
             delay: 0.2,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="relative mx-auto mb-6 w-[85vw] max-w-[700px] md:w-[65vw]"
+          className="relative mx-auto mb-4 sm:mb-6 w-[90vw] max-w-[700px] sm:w-[80vw] md:w-[65vw]"
         >
           {/* Glow behind logo */}
           <motion.div
@@ -159,7 +159,7 @@ export default function Hero() {
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.8, delay: 2.2 }}
-          className="mt-8 mb-12 max-w-2xl mx-auto overflow-hidden rounded-full py-3"
+          className="mt-6 mb-8 sm:mt-8 sm:mb-12 max-w-2xl mx-auto overflow-hidden rounded-full py-2.5 sm:py-3"
           style={{
             background: "rgba(255,255,255,0.04)",
             backdropFilter: "blur(8px)",
@@ -201,11 +201,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 2.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0"
         >
           <a
             href="#contact"
-            className="group relative px-8 py-4 rounded-full font-bold tracking-wide text-lg overflow-hidden transition-all duration-500"
+            className="group relative px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold tracking-wide text-base sm:text-lg overflow-hidden transition-all duration-500"
             style={{ background: "#C9A96E", color: "#3D1112" }}
             onMouseEnter={(e) => {
               e.currentTarget.style.boxShadow = "0 0 40px rgba(201, 169, 110, 0.4)";
@@ -218,7 +218,7 @@ export default function Hero() {
           </a>
           <a
             href="#repertoire"
-            className="px-8 py-4 rounded-full font-semibold tracking-wide text-lg transition-all duration-500"
+            className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-semibold tracking-wide text-base sm:text-lg transition-all duration-500"
             style={{
               border: "1px solid rgba(245, 240, 232, 0.2)",
               color: "rgba(245, 240, 232, 0.8)",
@@ -234,7 +234,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="mt-12 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
         >
           {[
             { target: 218, suffix: "+", label: "Songs" },
@@ -244,7 +244,7 @@ export default function Hero() {
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div
-                className="text-4xl md:text-5xl font-serif font-bold"
+                className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold"
                 style={{ color: "#C9A96E" }}
               >
                 <AnimatedCounter target={stat.target} suffix={stat.suffix} />
